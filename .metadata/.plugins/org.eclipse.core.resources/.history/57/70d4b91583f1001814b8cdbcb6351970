@@ -1,0 +1,6 @@
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:postgresql://localhost:1919/bodyFit
+spring.datasource.username=postgres
+spring.datasource.password=nawalben
+spring.datasource.driver-class-name = org.postgresql.Driver
+spring.datasource.initialization-mode=always

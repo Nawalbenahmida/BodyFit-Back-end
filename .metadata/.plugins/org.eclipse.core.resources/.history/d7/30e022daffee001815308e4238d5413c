@@ -1,0 +1,30 @@
+
+
+create table category(
+id_category integer primary key not null,
+name_category varchar(100) not null
+);
+
+create table video(
+id_video integer primary key not null,
+name_video varchar(100) not null,
+link varchar(100) not null,
+fk_id_category integer not null,
+constraint fk_video_category foreign key (fk_id_category) references category(id_category)
+);
+
+create table users(
+id_user integer primary key not null,
+name_user varchar(100) not null,
+firstName_user varchar(100) not null,
+mail_user varchar(100) not null,
+password_user varchar(100) not null
+);
+
+create table likes(
+fk_id_user integer not null,
+fk_id_video integer not null,
+constraint fk_like_user foreign key (fk_id_user) references users(id_user),
+constraint fk_like_video foreign key (fk_id_video) references video(id_video)
+);
+

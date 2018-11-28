@@ -1,0 +1,19 @@
+
+
+
+
+create table users(
+id_user integer primary key not null,
+name_user varchar(100) not null,
+firstName_user varchar(100) not null,
+mail_user varchar(100) not null,
+password_user varchar(100) not null
+);
+
+create table likes(
+fk_id_user integer not null,
+fk_id_video integer not null,
+constraint fk_like_user foreign key (fk_id_user) references users(id_user),
+constraint fk_like_video foreign key (fk_id_video) references video(id_video)
+);
+

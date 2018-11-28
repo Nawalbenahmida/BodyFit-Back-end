@@ -1,0 +1,5 @@
+package com.bodyFit.controller;
+
+public class VideoController {
+
+}
