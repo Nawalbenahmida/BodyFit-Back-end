@@ -1043,3 +1043,4 @@
 2018-11-27 16:51:45,244 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2018-11-27 16:51:45,264 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-11-27 16:51:45,264 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nawal\Documents\BodyFit_BackEnd\BodyFit\src\test\resources
+2018-11-28 09:15:30,721 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
