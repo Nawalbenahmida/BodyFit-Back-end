@@ -1,8 +1,10 @@
 package com.bodyFit.model;
 
 public class Category {
-public int id_category;
-public String name_category;
+private int id_category;
+private String name_category;
+
+
 
 public int getId_category() {
 	return id_category;

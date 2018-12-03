@@ -1,10 +1,10 @@
 package com.bodyFit.model;
 
 public class Video {
-	public int id_video;
-	public String name_video;
-	public String link_video;
-	public int fk_id_category;
+	private int id_video;
+	private String name_video;
+	private String link_video;
+	private Category category;
 	
 	public void setId_video(int id_video) {
 		this.id_video = id_video;
@@ -30,12 +30,14 @@ public class Video {
 		return link_video;
 	}
 	
-	public void setFk_id_category(int fk_id_category){
-		this.fk_id_category = fk_id_category;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
-	public int getFk_id_category(){
-		return fk_id_category;
+	public Category getCategory() {
+		return category;
 	}
+	
+
 
 }

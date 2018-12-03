@@ -21,7 +21,6 @@ public class CategoryDAOimpl implements CategoryDAO{
 	@Override
 	public List<Category> getAllCategory() {
 		String sql = "SELECT id_category, name_category FROM category";
-//		String query = "SELECT * FROM category INNER JOIN video ON category.id_category = video.fk_id_category";
 		RowMapper<Category> rowMapper = new CategoryRowMapper();
 		return this.jdbcTemplate.query(sql, rowMapper);
 	}

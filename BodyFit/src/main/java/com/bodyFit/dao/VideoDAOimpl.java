@@ -20,9 +20,9 @@ public class VideoDAOimpl implements VideoDAO {
 
 	@Override
 	public List<Video> getAllVideo() {
-		String sql = "SELECT id_video, name_video, link_video, fk_id_category FROM video" ;
+		String query = "SELECT * FROM category INNER JOIN video ON category.id_category = video.fk_id_category";
 		RowMapper<Video> rowMapper = new VideoRowMapper();
-		return this.jdbcTemplate.query(sql, rowMapper);
+		return this.jdbcTemplate.query(query, rowMapper);
 	}
 
 	@Override

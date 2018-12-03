@@ -1,7 +1,0 @@
-
-
-create table category(
-id_category Bigserial primary key not null,
-name_category varchar(100) not null
-);
-

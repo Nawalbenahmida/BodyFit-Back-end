@@ -1,4 +1,0 @@
-spring.datasource.url=jdbc:postgresql://localhost:1919/BodyFit
-spring.datasource.username=postgres
-spring.datasource.password=nawalben
-spring.datasource.platform=postgresql

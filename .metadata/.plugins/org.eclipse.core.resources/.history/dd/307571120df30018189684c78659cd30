@@ -1,0 +1,37 @@
+package com.bodyFit.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bodyFit.dao.UsersDAO;
+import com.bodyFit.model.Users;
+
+@Service
+public class UsersServiceImpl implements UsersService {
+	@Autowired
+	private UsersDAO usersDAO;
+
+	@Override
+	public List<Users> getAllUsers() {
+		return usersDAO.getAllUsers();
+	}
+
+	@Override
+	public Users getUsersById(int id_users) {
+		Users obj = usersDAO.getUsersById(id_user);
+		return obj;
+	}
+
+	@Override
+	public  synchronized boolean addUsers(Users users) {
+		if (usersDAO.articleExists()) {
+	          return false;
+          } else {
+	          articleDAO.addArticle(article);
+	          return true;
+          }
+	}
+
+}
