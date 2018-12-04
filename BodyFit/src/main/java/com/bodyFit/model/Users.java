@@ -1,11 +1,14 @@
 package com.bodyFit.model;
 
+
 public class Users {
+	
 	private int id_user;
 	private String name_user;
 	private String firstName_user;
 	private String mail_user;
 	private String password_user;
+	
 	
 	public void setId_user(int id_user) {
 		this.id_user = id_user;

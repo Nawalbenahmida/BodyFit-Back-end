@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +31,7 @@ public class UsersController {
 	private UsersService usersService;
 	
 	@GetMapping("users/{name}")
+	
 	public ResponseEntity<Users> getUsersByName(@PathVariable("name") String name){
 		Users users = usersService.getUsersByName(name);
 		return new ResponseEntity<Users>(users, HttpStatus.OK);
@@ -45,6 +47,7 @@ public class UsersController {
 	}
 	
 	@PostMapping("user")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Void> addUsers(@RequestBody Users users){
 		
 		 boolean flag = usersService.addUsers(users);
@@ -56,6 +59,7 @@ public class UsersController {
 	}
 	
 	@PostMapping("login")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Void> loginUsers(@RequestBody Users users){
 		 boolean flag = usersService.loginUsers( users.getMail_user(), users.getPassword_user());
          if (flag == true) {

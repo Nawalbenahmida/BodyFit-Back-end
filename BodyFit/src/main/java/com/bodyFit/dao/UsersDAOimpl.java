@@ -39,8 +39,8 @@ public class UsersDAOimpl implements UsersDAO {
 
 	@Override
 	public void addUsers(Users users) {
-		String sql = "INSERT INTO users ( id_user, name_user, firstName_user, mail_user,  password_user) values (?, ?, ?, ?, ?)";
-		 jdbcTemplate.update(sql, users.getId_user(), users.getName_user(), users.getFirstName_user(), users.getMail_user(), sha256(users.getPassword_user()));	
+		String sql = "INSERT INTO users (name_user, firstName_user, mail_user,  password_user) values ( ?, ?, ?, ?)";
+		 jdbcTemplate.update(sql, users.getName_user(), users.getFirstName_user(), users.getMail_user(), sha256(users.getPassword_user()));	
 	}
 	
 	private String sha256(String password_user) {

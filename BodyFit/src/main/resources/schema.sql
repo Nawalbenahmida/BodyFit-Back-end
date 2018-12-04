@@ -18,11 +18,12 @@ constraint fk_video_category foreign key (fk_id_category) references category(id
 );
 
 create table users(
-id_user integer primary key not null,
+id_user bigserial  primary key not null,
 name_user varchar(100) not null,
 firstName_user varchar(100) not null,
 mail_user varchar(100) not null,
 password_user varchar(100) not null
+
 );
 
 create table likes(
