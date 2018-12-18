@@ -19,7 +19,7 @@ public class LikesDAOimpl implements LikesDAO {
 
 	@Override
 	public List<Likes> getAllLikes() {
-		String query ="SELECT * FROM likes INNER JOIN video ON likes.fk_id_video = video.id_video INNER JOIN users ON  likes.fk_id_user = users.id_user ";
+		String query ="SELECT * FROM likes INNER JOIN video ON likes.fkIdVideo = video.idVideo INNER JOIN users ON  likes.fkIdUser = users.idUser ";
 		RowMapper<Likes> rowMapper = new LikesRowMapper();
 		return  this.jdbcTemplate.query(query,  rowMapper);
 	}

@@ -4,6 +4,6 @@ import com.bodyFit.model.Category;
 
 public interface CategoryDAO {
 	List<Category> getAllCategory();
-	Category getCategoryById(int id_category);
+	Category getCategoryById(int idCategory);
 
 }

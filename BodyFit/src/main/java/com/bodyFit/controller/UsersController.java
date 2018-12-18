@@ -61,7 +61,7 @@ public class UsersController {
 	@PostMapping("login")
 	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Void> loginUsers(@RequestBody Users users){
-		 boolean flag = usersService.loginUsers( users.getMail_user(), users.getPassword_user());
+		 boolean flag = usersService.loginUsers( users.getMailUser(), users.getPasswordUser());
          if (flag == true) {
         	 return new ResponseEntity<Void>( HttpStatus.CREATED);
  	  

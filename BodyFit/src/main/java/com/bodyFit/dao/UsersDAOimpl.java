@@ -24,29 +24,29 @@ public class UsersDAOimpl implements UsersDAO {
 
 	@Override
 	public List<Users> getAllUsers() {
-		String sql = "SELECT id_user, name_user, firstName_user, mail_user,  password_user FROM users";
+		String sql = "SELECT idUser, nameUser, firstNameUser, mailUser,  passwordUser FROM users";
 		RowMapper<Users> rowMapper = new UsersRowMapper();
 		return this.jdbcTemplate.query(sql, rowMapper);
 	}
 
 	@Override
-	public Users getUsersByName(String name_user) {
-		String sql = "SELECT mail_user, id_user, name_user, firstName_user,  password_user FROM users WHERE name_user = ?";
+	public Users getUsersByName(String nameUser) {
+		String sql = "SELECT mailUser, idUser, nameUser, firstNameUser,  passwordUser FROM users WHERE nameUser = ?";
 		RowMapper<Users> rowMapper = new BeanPropertyRowMapper<Users>(Users.class);
-		Users users = jdbcTemplate.queryForObject(sql, rowMapper, name_user);
+		Users users = jdbcTemplate.queryForObject(sql, rowMapper, nameUser);
 		return users;
 	}
 
 	@Override
 	public void addUsers(Users users) {
-		String sql = "INSERT INTO users (name_user, firstName_user, mail_user,  password_user) values ( ?, ?, ?, ?)";
-		 jdbcTemplate.update(sql, users.getName_user(), users.getFirstName_user(), users.getMail_user(), sha256(users.getPassword_user()));	
+		String sql = "INSERT INTO users (nameUser, firstNameUser, mailUser,  passwordUser) values ( ?, ?, ?, ?)";
+		 jdbcTemplate.update(sql, users.getNameUser(), users.getFirstNameUser(), users.getMailUser(), sha256(users.getPasswordUser()));	
 	}
 	
-	private String sha256(String password_user) {
+	private String sha256(String passwordUser) {
 	try {
 		MessageDigest digest = MessageDigest.getInstance("SHA-256");
-		byte[] hash = digest.digest(password_user.getBytes("UTF-8"));
+		byte[] hash = digest.digest(passwordUser.getBytes("UTF-8"));
 		return new String(hash);
 	} catch (Exception ex) {
 		 throw new RuntimeException(ex);
@@ -55,9 +55,9 @@ public class UsersDAOimpl implements UsersDAO {
 	}
 	
 	@Override
-	public boolean usersExists(String mail_user) {
-		String sql = "SELECT count(*) FROM users WHERE mail_user = ? ";
-		int count = jdbcTemplate.queryForObject(sql, Integer.class, mail_user);
+	public boolean usersExists(String mailUser) {
+		String sql = "SELECT count(*) FROM users WHERE mailUser = ? ";
+		int count = jdbcTemplate.queryForObject(sql, Integer.class, mailUser);
 		if(count == 0) {
 			return false;
 		} else {
@@ -66,9 +66,9 @@ public class UsersDAOimpl implements UsersDAO {
 	}
 
 	@Override
-	public boolean loginUsers(String mail_user, String password_user ) {
+	public boolean loginUsers(String mailUser, String passwordUser ) {
 		String sql = "SELECT count(*) FROM users WHERE mail_user = ? and  password_user = ?";
-	    int count = jdbcTemplate.queryForObject(sql, Integer.class, mail_user, sha256(password_user));
+	    int count = jdbcTemplate.queryForObject(sql, Integer.class, mailUser, sha256(passwordUser));
 		if(count == 0) {
 			return false;
 		} else {

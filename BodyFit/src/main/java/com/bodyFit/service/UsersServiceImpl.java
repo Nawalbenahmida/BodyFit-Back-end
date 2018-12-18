@@ -15,7 +15,7 @@ public class UsersServiceImpl implements UsersService {
 
 	@Override
 	public  boolean addUsers(Users users) {
-		 if (usersDAO.usersExists(users.getMail_user())) {
+		 if (usersDAO.usersExists(users.getMailUser())) {
 	          return false;
            } else {
 	          usersDAO.addUsers(users);
@@ -29,14 +29,14 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public Users getUsersByName(String name_user) {
-		Users obj = usersDAO.getUsersByName(name_user);
+	public Users getUsersByName(String nameUser) {
+		Users obj = usersDAO.getUsersByName(nameUser);
 		return obj;
 	}
 
 	@Override
-	public boolean loginUsers(String mail_user, String password_user) {
-		if(usersDAO.loginUsers( mail_user, password_user)){
+	public boolean loginUsers(String mailUser, String passwordUser) {
+		if(usersDAO.loginUsers( mailUser, passwordUser)){
 			return true;
 		}else {
 			return false;

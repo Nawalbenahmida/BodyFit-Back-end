@@ -1,25 +1,25 @@
 package com.bodyFit.model;
 
 public class Likes {
-	private int fk_id_user ;
-	private int fk_id_video;
+	private int fkIdUser ;
+	private int fkIdVideo;
 	private Video video;
 	private Users users;
 	
-	public void setFk_id_user(int fk_id_user) {
-		this.fk_id_user = fk_id_user;
+	public void setFkIdUser(int fkIdUser) {
+		this.fkIdUser = fkIdUser;
 	}
 	
-	public int getFk_id_user() {
-		return fk_id_user;
+	public int getFkIdUser() {
+		return fkIdUser;
 	}
 	
-	public void setFk_id_video(int fk_id_video) {
-		this.fk_id_video = fk_id_video;
+	public void setFkIdVideo(int fkIdVideo) {
+		this.fkIdVideo = fkIdVideo;
 	}
 	
-	public int getFk_id_video() {
-		return fk_id_video;
+	public int getFkIdVideo() {
+		return fkIdVideo;
 	}
 	
 	public void setVideo(Video video) {

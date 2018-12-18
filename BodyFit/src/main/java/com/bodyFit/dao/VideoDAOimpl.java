@@ -20,14 +20,14 @@ public class VideoDAOimpl implements VideoDAO {
 
 	@Override
 	public List<Video> getAllVideo() {
-		String query = "SELECT * FROM category INNER JOIN video ON category.id_category = video.fk_id_category";
+		String query = "SELECT * FROM category INNER JOIN video ON category.idCategory = video.fkIdCategory";
 		RowMapper<Video> rowMapper = new VideoRowMapper();
 		return this.jdbcTemplate.query(query, rowMapper);
 	}
 
 	@Override
 	public Video getVideoById(int id_video) {
-		String sql = "SELECT id_video, name_video, link_video, fk_id_category FROM video WHERE id_video = ? ";
+		String sql = "SELECT idVideo, nameVideo, linkVideo, classVideo, blockVideo, fkIdCategory FROM video WHERE idVideo = ? ";
 		RowMapper<Video> rowMapper = new BeanPropertyRowMapper<Video>(Video.class);
 		Video video = jdbcTemplate.queryForObject(sql, rowMapper, id_video);
 		return video;
@@ -35,7 +35,7 @@ public class VideoDAOimpl implements VideoDAO {
 
 	@Override
 	public List<Video> getVideoByIdFkCategory(int fk_id_category) {
-		String sql = "SELECT id_video, name_video, link_video, fk_id_category FROM video WHERE fk_id_category = ? ";
+		String sql = "SELECT idVideo, nameVideo, linkVideo, classVideo, blockVideo, fkIdCategory FROM video WHERE fkIdCategory = ? ";
 		RowMapper<Video> rowMapper = new BeanPropertyRowMapper<Video>(Video.class);
 		List<Video> list = jdbcTemplate.query(sql, rowMapper, fk_id_category);
 		return list;

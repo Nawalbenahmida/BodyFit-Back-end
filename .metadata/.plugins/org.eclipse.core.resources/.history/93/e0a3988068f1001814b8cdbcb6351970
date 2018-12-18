@@ -1,5 +1,0 @@
-package com.bodyFit.model;
-
-public @interface Entity {
-
-}

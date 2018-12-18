@@ -12,11 +12,11 @@ public class LikesRowMapper implements RowMapper<Likes> {
 	Likes likes = new Likes();
 	Video video = new Video();
 	Users users = new Users();
-	likes.setFk_id_user(row.getInt("fk_id_user"));
-	likes.setFk_id_video(row.getInt("fk_id_video"));
-	video.setLink_video(row.getString("link_video"));
-	video.setName_video(row.getString("name_video"));
-	users.setMail_user(row.getString("mail_user"));
+	likes.setFkIdUser(row.getInt("fkIdUser"));
+	likes.setFkIdVideo(row.getInt("fkIdVideo"));
+	video.setLinkVideo(row.getString("linkVideo"));
+	video.setNameVideo(row.getString("nameVideo"));
+	users.setMailUser(row.getString("mailUser"));
 	likes.setUsers(users);
 	likes.setVideo(video);
 		return likes;

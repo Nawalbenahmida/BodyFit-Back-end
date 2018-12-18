@@ -1,9 +1,0 @@
-package com.bodyFit.dao;
-import java.util.List;
-import com.bodyFit.model.Category;
-
-public interface ICategoryDAO {
-	List<Category> getAllCategory();
-	Category getCategoryById(int id_category);
-
-}

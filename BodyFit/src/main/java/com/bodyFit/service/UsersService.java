@@ -6,7 +6,7 @@ import com.bodyFit.model.Users;
 
 public interface UsersService {
 	List<Users> getAllUsers();
-	Users getUsersByName(String name_user);
+	Users getUsersByName(String nameUser);
 	boolean addUsers(Users users);
-   boolean loginUsers(String mail_user, String password_user);
+   boolean loginUsers(String mailUser, String passwordUser);
 }

@@ -20,16 +20,16 @@ public class CategoryDAOimpl implements CategoryDAO{
 	
 	@Override
 	public List<Category> getAllCategory() {
-		String sql = "SELECT id_category, name_category FROM category";
+		String sql = "SELECT idCategory, nameCategory, classCategory, routingCategory FROM category";
 		RowMapper<Category> rowMapper = new CategoryRowMapper();
 		return this.jdbcTemplate.query(sql, rowMapper);
 	}
 
 	@Override
-	public Category getCategoryById(int id_category) {
-		String sql = "SELECT id_category, name_category FROM category WHERE id_category = ?";
+	public Category getCategoryById(int idCategory) {
+		String sql = "SELECT idCategory, nameCategory, classCategory, routingCategory FROM category WHERE idCategory = ?";
 		RowMapper<Category> rowMapper = new BeanPropertyRowMapper<Category>(Category.class);
-		Category category = jdbcTemplate.queryForObject(sql,  rowMapper, id_category);
+		Category category = jdbcTemplate.queryForObject(sql,  rowMapper, idCategory);
 		return category;
 	}
 

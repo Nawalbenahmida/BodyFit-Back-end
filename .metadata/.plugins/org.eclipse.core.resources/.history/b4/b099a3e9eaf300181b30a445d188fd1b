@@ -1,5 +1,0 @@
-package com.bodyFit.dao;
-
-public interface LikesDAO {
-
-}

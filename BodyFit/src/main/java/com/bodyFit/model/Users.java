@@ -3,52 +3,52 @@ package com.bodyFit.model;
 
 public class Users {
 	
-	private int id_user;
-	private String name_user;
-	private String firstName_user;
-	private String mail_user;
-	private String password_user;
+	private int idUser;
+	private String nameUser;
+	private String firstNameUser;
+	private String mailUser;
+	private String passwordUser;
 	
 	
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 
-	public int getId_user() {
-		return id_user;
+	public int getIdUser() {
+		return idUser;
 	}
 	
-	public void setName_user(String name_user) {
-		this.name_user = name_user;
+	public void setNameUser(String nameUser) {
+		this.nameUser = nameUser;
 	}
 	
-	public String getName_user() {
-		return name_user;
+	public String getNameUser() {
+		return nameUser;
 	}
 	
 	
-	public void setFirstName_user(String firstName_user) {
-		this.firstName_user = firstName_user;
+	public void setFirstNameUser(String firstNameUser) {
+		this.firstNameUser = firstNameUser;
 	}
 	
-	public String getFirstName_user() {
-		return firstName_user;
+	public String getFirstNameUser() {
+		return firstNameUser;
 	}
 	
-	public void setMail_user(String mail_user) {
-		this.mail_user = mail_user;
+	public void setMailUser(String mailUser) {
+		this.mailUser = mailUser;
 	}
 	
-	public String getMail_user() {
-		return mail_user;
+	public String getMailUser() {
+		return mailUser;
 	}
 	
-	public void setPassword_user(String password_user) {
-		this.password_user = password_user;
+	public void setPasswordUser(String passwordUser) {
+		this.passwordUser = passwordUser;
 	}
 	
-	public String getPassword_user() {
-		return password_user;
+	public String getPasswordUser() {
+		return passwordUser;
 	}
 	
 	

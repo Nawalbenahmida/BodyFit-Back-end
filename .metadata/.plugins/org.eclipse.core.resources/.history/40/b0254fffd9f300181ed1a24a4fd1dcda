@@ -1,8 +1,0 @@
-package com.bodyFit.service;
-
-import com.bodyFit.model.Users;
-
-public interface UsersService {
-	boolean addUsers(Users users);
-
-}

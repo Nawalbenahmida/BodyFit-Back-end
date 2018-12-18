@@ -6,10 +6,10 @@ import com.bodyFit.model.Users;
 
 public interface UsersDAO {
 	List<Users> getAllUsers();
-	Users getUsersByName(String name_user);
+	Users getUsersByName(String nameUser);
 	void addUsers(Users users);
-	boolean loginUsers(String mail_user, String password_user);
-	boolean usersExists(String mail_user);
-//	boolean loginExists(String mail_user, String password_user);
+	boolean loginUsers(String mailUser, String passwordUser);
+	boolean usersExists(String mailUser);
+
 
 }
